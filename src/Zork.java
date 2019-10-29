@@ -2,7 +2,6 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Zork {
-
     //public variables to store user inputs for return
     public static String userInput="";
     public static int count=0; //count number of rooms entered
@@ -40,11 +39,10 @@ public class Zork {
                 case "quit":
                     quit();
                     break;
-            }
+            }//end switch
+        }//while loop
+    }//end main
 
-        }
-
-    }
     public static String foyer(){
         Scanner kd = new Scanner(System.in);
         count+=1;
@@ -58,7 +56,7 @@ public class Zork {
             userInput="quit";
         }
         return userInput;
-    }
+    }//end foyer room
 
     public static String frontRoom(){
         Scanner kd = new Scanner(System.in);
@@ -80,11 +78,9 @@ public class Zork {
             case "quit":
                 userInput="quit";
                 break;
-
         }
-
         return userInput;
-    }
+    }//end front room
 
     public static String library(){
         Scanner kd = new Scanner(System.in);
@@ -97,7 +93,6 @@ public class Zork {
             case "north":
                 userInput="dining room";
                 break;
-
             case "east":
                 userInput="front room";
                 break;
@@ -106,7 +101,8 @@ public class Zork {
                 break;
         }
         return userInput;
-    }
+    }//end library
+
     public static String kitchen(){
         Scanner kd = new Scanner(System.in);
         count+=1;
@@ -121,15 +117,13 @@ public class Zork {
             case "west":
                 userInput="front room";
                 break;
-
             case "quit":
                 userInput="quit";
                 break;
-
         }
-
         return userInput;
-    }
+    }//end kitchen
+
     public static String diningRoom(){
         Scanner kd = new Scanner(System.in);
         count+=1;
@@ -145,17 +139,13 @@ public class Zork {
             case "quit":
                 userInput="quit";
                 break;
-
         }
-
         return userInput;
-    }
+    }//end dining
 
     public static String vaultRoom() {
         Scanner kd = new Scanner(System.in);
         count += 1;
-
-
         System.out.println("You are in room 6, the vault");
         System.out.println("3 walking skeletons");
         if (key) {
@@ -176,7 +166,6 @@ public class Zork {
                 userInput = "quit";
             }
         } else {
-
             System.out.println("Do you want to go to parlor or secret room?");
             String answer = kd.nextLine();
 
@@ -187,12 +176,11 @@ public class Zork {
                 userInput = "parlor";
             } else {
                 userInput = "quit";
-
             }
-
         }
         return userInput;
-    }
+    }//end vault
+
     public static String parlorRoom()
     {
         Scanner kd = new Scanner(System.in);
@@ -225,13 +213,12 @@ public class Zork {
             case "west":
                 userInput="vault";
                 break;
-
             case "quit":
                 userInput="quit";
                 break;
         }
         return userInput;
-    }
+    }//end parlor
 
     public static String quit() {
         Random random=new Random();
@@ -244,9 +231,9 @@ public class Zork {
             System.out.println("You have safely escaped the castle. No ghost");
         }
         System.out.println("You have visited " + count + " rooms while you were in the castle");
-        userInput="stop";
+        userInput="stop";//to be used in main to check for while loop condition
         return userInput;
-    }
+    }//end quit
 
 
 }
